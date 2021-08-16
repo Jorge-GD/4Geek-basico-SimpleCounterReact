@@ -1,26 +1,39 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
+import Counter from "./counter.jsx";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
-const Home = () => {
+function Home() {
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<Fragment>
+			<div className=" box ">
+				<div className=" box-clock">
+					<div className=" icon-clock">
+						<i className="far fa-clock"></i>
+					</div>
+					<div className=" mini-card thousands ">
+						<Counter delay={1000} start={0} />
+					</div>
+					<div className=" mini-card hundreds ">
+						<Counter delay={100} start={0} />
+					</div>
+					<div className=" mini-card tens ">
+						<Counter delay={10} start={0} />
+					</div>
+					<div className="mini-card unit ">
+						<Counter delay={1} start={0} />
+					</div>
+				</div>
+				<div className=" cat ">
+					<div className=" cat__body " />
+					<div className=" cat__tail " />
+					<div className=" cat__head " />
+				</div>
+				<h2>
+					El gato es un mero regalo visual, ya que realmente no se me
+					ocurria nada y voy mal de tiempo
+				</h2>
+			</div>
+		</Fragment>
 	);
-};
+}
 
 export default Home;
